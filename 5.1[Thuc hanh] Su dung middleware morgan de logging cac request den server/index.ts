@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import morgan from 'morgan';
-
+import helmet from "helmet";
 
 
 const PORT = 3000;
@@ -11,7 +11,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(morgan("common"));
-
+app.use(helmet());
 app.get('/', (req, res) => {
 
     res.json({
